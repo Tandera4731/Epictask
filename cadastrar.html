@@ -1,67 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSTraining - Cadastro</title>
-    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link
+      href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <script src="./assets/JS/cadastrar.js" defer></script>
-</head>
-
-<body>
-
+  </head>
+  <body>
     <h1>CS2 Skills and Missions</h1>
 
     <form action="">
+      <h2 class="nes-text is-primary">Cadastrar Treino</h2>
 
-        <h2 class="nes-text is-primary">Cadastrar Treino</h2>
-
-        <div class="nes-field">
-            <label for="default_select">Habilidade</label>
-            <div class="nes-select">
-                <select required id="default_select">
-                    <option value="" disabled selected hidden>Selecione...</option>
-                    <option value="0">Mira</option>
-                    <option value="1">Movimentação</option>
-                    <option value="2">Suporte</option>
-                    <option value="3">Comunicação</option>
-                    <option value="4">Trade</option>
-                    <option value="5">Ofensas</option>
-                </select>
-            </div>
+      <div class="nes-field">
+        <label for="select_title">Habilidade</label>
+        <div class="nes-select" id="error_Hb">
+          <select id="select_title">
+            <option value="" disabled selected hidden>Selecione...</option>
+            <option value="0">Mira</option>
+            <option value="1">Movimentação</option>
+            <option value="2">Suporte</option>
+            <option value="3">Comunicação</option>
+            <option value="4">Trade</option>
+            <option value="5">Ofensas</option>
+          </select>
         </div>
+        <span id="select_title_erro" class="nes-text is-error"></span>
+      </div>
 
-        <div class="nes-field">
-            <label for="default_select">Modo de Jogo</label>
-            <div class="nes-select">
-                <select required id="default_select">
-                    <option value="0">Aquecimento</option>
-                    <option value="1">Braço Direito</option>
-                    <option value="2" selected>Competitivo</option>
-                </select>
-            </div>
+      <div class="nes-field">
+        <label for="select_mode">Modo de Jogo</label>
+        <div class="nes-select" id="select_mode">
+          <select required id="select_mode">
+            <option value="0">Aquecimento</option>
+            <option value="1">Braço Direito</option>
+            <option value="2" selected>Competitivo</option>
+          </select>
         </div>
+      </div>
 
-        <div class="nes-field">
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" class="nes-textarea"></textarea>
-            <span id="descricao-erro" class="nes-text is-error"></span>
-        </div>
+      <div class="nes-field">
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" class="nes-textarea"></textarea>
+        <span id="descricao-erro" class="nes-text is-error"></span>
+      </div>
 
-        <div class="nes-field">
-            <label for="pontos">Pontos</label>
-            <input type="text" id="pontos" class="nes-input">
-            <span id="pontos-erro" class="nes-text is-error"></span>
-        </div>
+      <div class="nes-field">
+        <label for="pontos">Pontos</label>
+        <input type="number" id="pontos" class="nes-input" />
+        <span id="pontos-erro" class="nes-text is-error"></span>
+      </div>
 
-        <div class="acoes">
-            <a href="/index.html" class="nes-btn is-error">Cancelar</a>
-            <button type="button" id="botao-cadastrar" class="nes-btn is-success">Salvar</button>
-        </div>
-
+      <div class="acoes">
+        <a href="index.html" class="nes-btn is-error">Cancelar</a>
+        <button type="button" id="botao-cadastrar" class="nes-btn is-success">
+          Salvar
+        </button>
+      </div>
     </form>
+
+    <audio
+      src="./assets/audio/Counter Strike 2 - Official Lobby Music CS2 OST [9Zp9hph6msM].mp4"
+      autoplay
+      controls
+    ></audio>
+  </body>
+</html>

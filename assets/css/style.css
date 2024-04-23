@@ -1,16 +1,15 @@
 body {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 #lista-de-tarefas {
-    /*mobile first*/
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+  /*mobile first*/
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 
-    
-    /* nesting css */
-    /*
+  /* nesting css */
+  /*
     @media (min-width: 500px){
         grid-template-columns: repeat(2, 1fr);
     }
@@ -22,34 +21,34 @@ body {
 }
 
 #title {
-    display: flex;
-    flex-direction: row;    
-    
-    h1{
-        margin-top: 8px;
-    }
+  display: flex;
+  flex-direction: row;
 
-    a{
-        margin-left: auto;
-        margin-bottom: 20px;
-    }
+  h1 {
+    margin-top: 8px;
+  }
+
+  a {
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 2rem auto;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 2rem auto;
+  gap: 2rem;
 }
 
 .acoes {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
-.icon-title{
-    margin-right: 20px;
-    width: auto;
-    height: 50px;
+.icon-title {
+  margin-right: 20px;
+  width: auto;
+  height: 50px;
 }
