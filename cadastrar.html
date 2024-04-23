@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EpicTask - Cadastrar</title>
+    <title>CSTraining - Cadastro</title>
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,17 +12,39 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/JS/cadastrar.js" defer></script>
 </head>
+
 <body>
 
-    <h1>Epic Task</h1>
+    <h1>CS2 Skills and Missions</h1>
 
     <form action="">
-        
-        <h2 class="nes-text is-primary">Cadastrar Tarefa</h2>
+
+        <h2 class="nes-text is-primary">Cadastrar Treino</h2>
+
         <div class="nes-field">
-            <label for="titulo">Título</label>
-            <input type="text" id="titulo" class="nes-input">
-            <span id="titulo-erro" class="nes-text is-error"></span>
+            <label for="default_select">Habilidade</label>
+            <div class="nes-select">
+                <select required id="default_select">
+                    <option value="" disabled selected hidden>Selecione...</option>
+                    <option value="0">Mira</option>
+                    <option value="1">Movimentação</option>
+                    <option value="2">Suporte</option>
+                    <option value="3">Comunicação</option>
+                    <option value="4">Trade</option>
+                    <option value="5">Ofensas</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="nes-field">
+            <label for="default_select">Modo de Jogo</label>
+            <div class="nes-select">
+                <select required id="default_select">
+                    <option value="0">Aquecimento</option>
+                    <option value="1">Braço Direito</option>
+                    <option value="2" selected>Competitivo</option>
+                </select>
+            </div>
         </div>
 
         <div class="nes-field">
@@ -42,4 +65,3 @@
         </div>
 
     </form>
-
