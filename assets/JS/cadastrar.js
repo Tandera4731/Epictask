@@ -10,11 +10,20 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
 
   validar(tarefa);
 
-  console.log(tarefa);
+  salvar(tarefa);
+
+
 });
 
+function salvar (tarefa){
+  const tarefas = JSON.parse(localStorage.getItem("tarefas")) || []
+  tarefas.push(tarefa)
+  localStorage.setItem("tarefas", JSON.stringify(tarefas))
+  window.location.href = "index.html"
+}
+
 function validar(tarefa) {
-  //   limparErros();
+    limparErros();
   if (tarefa.titulo.trim() == "") {
     document.querySelector("#error_Hb").classList.add("is-error");
     document.querySelector("#select_title_erro").innerText =
@@ -32,8 +41,14 @@ function validar(tarefa) {
       "Os pontos devem ser maior que zero";
   }
 }
-// function limparErros() {
-//   document
-//     .querySelectorAll("input .is-error, textarea .iserror")
-//     .classList.remove("is-error");
-// }
+function limparErros() {
+  const campos = document
+    .querySelectorAll("input.is-error, textarea.is-error, div.is-error")
+  console.log(campos)
+  
+  campos
+    .forEach((input) => {input.classList.remove("is-error")})
+
+  document.querySelectorAll(".nes-field span")
+    .forEach( span => span.innerText = "")
+}
