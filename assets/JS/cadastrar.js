@@ -8,47 +8,52 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
     pontos: form.pontos.value,
   };
 
-  validar(tarefa);
-
-  salvar(tarefa);
-
-
+  if (validar(tarefa)) {
+    salvar(tarefa);
+  }
 });
 
-function salvar (tarefa){
-  const tarefas = JSON.parse(localStorage.getItem("tarefas")) || []
-  tarefas.push(tarefa)
-  localStorage.setItem("tarefas", JSON.stringify(tarefas))
-  window.location.href = "index.html"
+function salvar(tarefa) {
+  const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+  tarefas.push(tarefa);
+  localStorage.setItem("tarefas", JSON.stringify(tarefas));
+  window.location.href = "index.html";
 }
 
 function validar(tarefa) {
-    limparErros();
+  limparErros();
   if (tarefa.titulo.trim() == "") {
     document.querySelector("#error_Hb").classList.add("is-error");
     document.querySelector("#select_title_erro").innerText =
       "A Seleção da Habilidade é Obrigatório";
+    return false;
   }
 
   if (tarefa.descricao.trim() == "" || tarefa.descricao.length < 10) {
     document.querySelector("#descricao").classList.add("is-error");
     document.querySelector("#descricao-erro").innerText =
       "A Descrição deve ter pelo menos 10 caracteres";
+    return false;
   }
   if (tarefa.pontos <= 0) {
     document.querySelector("#pontos").classList.add("is-error");
     document.querySelector("#pontos-erro").innerText =
       "Os pontos devem ser maior que zero";
+    return false;
   }
+  return true;
 }
 function limparErros() {
-  const campos = document
-    .querySelectorAll("input.is-error, textarea.is-error, div.is-error")
-  console.log(campos)
-  
-  campos
-    .forEach((input) => {input.classList.remove("is-error")})
+  const campos = document.querySelectorAll(
+    "input.is-error, textarea.is-error, div.is-error"
+  );
+  console.log(campos);
 
-  document.querySelectorAll(".nes-field span")
-    .forEach( span => span.innerText = "")
+  campos.forEach((input) => {
+    input.classList.remove("is-error");
+  });
+
+  document
+    .querySelectorAll(".nes-field span")
+    .forEach((span) => (span.innerText = ""));
 }
