@@ -8,7 +8,7 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
     pontos: form.pontos.value,
   };
 
-  if (validar(tarefa)) {
+  if (!validar(tarefa)) {
     salvar(tarefa);
   }
 });
@@ -21,27 +21,28 @@ function salvar(tarefa) {
 }
 
 function validar(tarefa) {
+  let auxError = false;
   limparErros();
   if (tarefa.titulo.trim() == "") {
     document.querySelector("#error_Hb").classList.add("is-error");
     document.querySelector("#select_title_erro").innerText =
       "A Seleção da Habilidade é Obrigatório";
-    return false;
+    auxError = true;
   }
 
   if (tarefa.descricao.trim() == "" || tarefa.descricao.length < 10) {
     document.querySelector("#descricao").classList.add("is-error");
     document.querySelector("#descricao-erro").innerText =
       "A Descrição deve ter pelo menos 10 caracteres";
-    return false;
+    auxError = true;
   }
   if (tarefa.pontos <= 0) {
     document.querySelector("#pontos").classList.add("is-error");
     document.querySelector("#pontos-erro").innerText =
       "Os pontos devem ser maior que zero";
-    return false;
+    auxError = true;
   }
-  return true;
+  return auxError;
 }
 function limparErros() {
   const campos = document.querySelectorAll(
